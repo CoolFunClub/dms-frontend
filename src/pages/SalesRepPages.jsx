@@ -81,6 +81,7 @@ function CarInput({ car }) {
 
 async function addCar() {
 	const body = {
+		vin: document.getElementById("vin").value,
 		manufacturer: document.getElementById("manufacturer").value,
 		model: document.getElementById("model").value,
 		carYear: parseInt(document.getElementById("carYear").value),
