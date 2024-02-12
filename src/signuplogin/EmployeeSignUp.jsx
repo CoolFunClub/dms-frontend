@@ -39,7 +39,7 @@ async function submitSignUp() {
 		pw: document.getElementById("password").value,
 	};
 
-	const data = await fetch(`https://www.afkauto.com/api/account/${employeeType}/${id}`, {
+	const data = await fetch(`https://app.afkauto.com/account/${employeeType}/${id}`, {
 		body: JSON.stringify(userNamePw),
 		method: "POST",
 		headers: {

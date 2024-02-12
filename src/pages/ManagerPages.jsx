@@ -79,7 +79,7 @@ async function editUser(id, acctType) {
 	};
 	body[identifier] = document.getElementById("id").value;
 
-	const data = await fetch(`https://www.afkauto.com/api/${acctType}/${id}`, {
+	const data = await fetch(`https://app.afkauto.com/${acctType}/${id}`, {
 		body: JSON.stringify(body),
 		method: "PUT",
 		headers: {
@@ -92,7 +92,7 @@ async function editUser(id, acctType) {
 }
 
 async function deleteUser(id, acctType) {
-	const data = await fetch(`https://www.afkauto.com/api/${acctType}/${id}`, {
+	const data = await fetch(`https://app.afkauto.com/${acctType}/${id}`, {
 		method: "DELETE",
 		headers: {
 			"Content-Type": "application/json",
@@ -104,7 +104,7 @@ async function deleteUser(id, acctType) {
 }
 
 async function getUser(id, acctType) {
-	const data = await fetch(`https://www.afkauto.com/api/${acctType}/${id}`,	{
+	const data = await fetch(`https://app.afkauto.com/${acctType}/${id}`,	{
 		method: "GET",
 		headers: {
 			"Content-Type": "application/json",
@@ -124,7 +124,7 @@ export function ViewManagers({ page }) {
 
 	useEffect(() => {
 		const getMsg = async () => {
-			const data = await fetch("https://www.afkauto.com/api/manager", {
+			const data = await fetch("https://app.afkauto.com/manager", {
 				method: "GET",
 				headers: {
 					"Content-Type": "application/json",
@@ -159,7 +159,7 @@ export function ViewCustomers({ page }) {
 
 	useEffect(() => {
 		const getMsg = async () => {
-			const data = await fetch("https://www.afkauto.com/api/cfc/customers", {
+			const data = await fetch("https://app.afkauto.com/customers", {
 				method: "GET",
 				headers: {
 					"Content-Type": "application/json",
@@ -209,7 +209,7 @@ export function ViewSalesReps({ page }) {
 
 	useEffect(() => {
 		const getMsg = async () => {
-			const data = await fetch("https://www.afkauto.com/api/cfc/rep", {
+			const data = await fetch("https://app.afkauto.com/cfc/rep", {
 				method: "GET",
 				headers: {
 					"Content-Type": "application/json",

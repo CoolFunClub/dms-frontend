@@ -18,7 +18,7 @@ function MainForm() {
 			pw: document.getElementById("password").value,
 		};
 
-		fetch(`https://www.afkauto.com/api/login/customer/${id}`, {
+		fetch(`https://app.afkauto.com/login/customer/${id}`, {
 			body: JSON.stringify(accountDto),
 			method: "POST",
 			headers: {

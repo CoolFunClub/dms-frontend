@@ -49,7 +49,7 @@ export function ViewCars({ page }) {
 	// only causes a CORS error when testing locally
 	useEffect(() => {
 		const getMsg = async () => {
-			const data = await fetch("https://www.afkauto.com/api/cars", {
+			const data = await fetch("https://app.afkauto.com/cars", {
 				method: "GET",
 				headers: {
 					"Content-Type": "application/json",

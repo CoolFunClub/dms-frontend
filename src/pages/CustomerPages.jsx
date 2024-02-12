@@ -10,7 +10,7 @@ export function EmailRep({ page }) {
 
 	useEffect(() => {
 		const getReps = async () => {
-			const data = await fetch("https://www.afkauto.com/api/cfc/rep", {
+			const data = await fetch("https://app.afkauto.com/cfc/rep", {
 				method: "GET",
 				headers: {
 					"Content-Type": "application/json",

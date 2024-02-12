@@ -22,7 +22,7 @@ async function submitSignUp() {
 		driverLicenseID: dlNum,
 	};
 
-	await fetch("https://www.afkauto.com/api/cfc/addcustomers", {
+	await fetch("https://app.afkauto.com/cfc/addcustomers", {
 		body: JSON.stringify(customer),
 		method: "POST",
 		headers: {
@@ -37,7 +37,7 @@ async function submitSignUp() {
 		pw: document.getElementById("password").value,
 	};
 
-	const data = await fetch(`https://www.afkauto.com/api/account/customer/${dlNum}`, {
+	const data = await fetch(`https://app.afkauto.com/account/customer/${dlNum}`, {
 		body: JSON.stringify(userNamePw),
 		method: "POST",
 		headers: {

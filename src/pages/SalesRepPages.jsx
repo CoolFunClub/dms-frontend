@@ -10,7 +10,7 @@ export function EditInventory({ page }) {
 	const visClass = page === EDIT_INV ? "Page" : "Hidden";
 
 	async function getCar(vin) {
-		const data = await fetch(`https://www.afkauto.com/api/cars/${vin}`, {
+		const data = await fetch(`https://app.afkauto.com/cars/${vin}`, {
 			method: "GET",
 			headers: {
 				"Content-Type": "application/json",
@@ -92,7 +92,7 @@ async function addCar() {
 		price: parseFloat(document.getElementById("price").value),
 	};
 
-	const data = await fetch("https://www.afkauto.com/api/cars", {
+	const data = await fetch("https://app.afkauto.com/cars", {
 		body: JSON.stringify(body),
 		method: "POST",
 		headers: {
@@ -105,7 +105,7 @@ async function addCar() {
 }
 
 async function deleteCar(vin) {
-	const data = await fetch(`https://www.afkauto.com/api/cars/${vin}`, {
+	const data = await fetch(`https://app.afkauto.com/cars/${vin}`, {
 		method: "DELETE",
 		headers: {
 			"Content-Type": "application/json",
@@ -129,7 +129,7 @@ async function editCar(vin) {
 		price: parseFloat(document.getElementById("editPrice").value),
 	};
 
-	const data = await fetch(`https://www.afkauto.com/api/cars/${vin}`, {
+	const data = await fetch(`https://app.afkauto.com/cars/${vin}`, {
 		body: JSON.stringify(body),
 		method: "PUT",
 		headers: {
@@ -178,7 +178,7 @@ function submitSale() {
 		totalPaid: parseFloat(document.getElementById("totalPaid").value),
 	}
 
-	fetch(`https://www.afkauto.com/api/cfc/fullp/${acctId}`, {
+	fetch(`https://app.afkauto.com/cfc/fullp/${acctId}`, {
 			body: JSON.stringify(sale),
 			method: "POST",
 			headers: {
