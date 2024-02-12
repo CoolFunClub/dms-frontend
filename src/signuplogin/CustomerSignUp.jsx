@@ -22,7 +22,7 @@ async function submitSignUp() {
 		driverLicenseID: dlNum,
 	};
 
-	await fetch("https://app.afkauto.com/cfc/addcustomers", {
+	await fetch("https://app.afkauto.com/addcustomers", {
 		body: JSON.stringify(customer),
 		method: "POST",
 		headers: {

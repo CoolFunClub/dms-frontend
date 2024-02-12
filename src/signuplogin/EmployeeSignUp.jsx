@@ -10,7 +10,6 @@ function checkPasswords() {
 
 async function submitSignUp() {
 	const employeeType = document.getElementById("employeetype").value;
-	const entityUrl = employeeType === "manager" ? "manager" : "cfc/rep";
 	// make employee entity
 	const id = parseInt(document.getElementById("id").value);
 	const employee = {
@@ -24,7 +23,7 @@ async function submitSignUp() {
 		ssn: id,
 	};
 
-	await fetch(`https://www.afkauto.com/api/${entityUrl}`, {
+	await fetch(`https://app.afkauto.com/${employeeType}`, {
 		body: JSON.stringify(employee),
 		method: "POST",
 		headers: {
@@ -62,7 +61,7 @@ function MainForm() {
 				<label htmlFor="employeetype">Employee Type</label>
 				<select id="employeetype">
 					<option value="manager">Manager</option>
-					<option value="salesRep">Salesperson</option>
+					<option value="rep">Salesperson</option>
 				</select>
 			</div>
 			<div className="FormRow">

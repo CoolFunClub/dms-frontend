@@ -15,11 +15,11 @@ export function ManageCustomers({ page }) {
 			<label className="marginTop" htmlFor="acctType">Account type</label>
 			<select id="acctType" value={acctType} onChange={(event)=>{setAcctType(event.target.value)}}>
 				<option value="manager">Manager</option>
-				<option value="cfc/rep">Sales representative</option>
-				<option value="cfc/customers">Customer</option>
+				<option value="rep">Sales representative</option>
+				<option value="customers">Customer</option>
 			</select>
 				<button className="ActionBtn">
-					<a href={`https://afkauto.com/api/${acctType}`} target="_blank" rel="noreferrer">
+					<a href={`https://app.afkauto.com/${acctType}`} target="_blank" rel="noreferrer">
 						View all accounts of this type
 					</a>
 				</button>
@@ -67,7 +67,7 @@ function AccountFields({ acct }) {
 }
 
 async function editUser(id, acctType) {
-	const identifier = acctType === "cfc/customers" ? "driverLicenseID" : "ssn";
+	const identifier = acctType === "customers" ? "driverLicenseID" : "ssn";
 	const body = {
 		firstName: document.getElementById("fn").value,
 		lastName: document.getElementById("ln").value,
@@ -209,7 +209,7 @@ export function ViewSalesReps({ page }) {
 
 	useEffect(() => {
 		const getMsg = async () => {
-			const data = await fetch("https://app.afkauto.com/cfc/rep", {
+			const data = await fetch("https://app.afkauto.com/rep", {
 				method: "GET",
 				headers: {
 					"Content-Type": "application/json",

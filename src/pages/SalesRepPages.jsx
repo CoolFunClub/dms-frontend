@@ -178,7 +178,7 @@ function submitSale() {
 		totalPaid: parseFloat(document.getElementById("totalPaid").value),
 	}
 
-	fetch(`https://app.afkauto.com/cfc/fullp/${acctId}`, {
+	fetch(`https://app.afkauto.com/fullp/${acctId}`, {
 			body: JSON.stringify(sale),
 			method: "POST",
 			headers: {
